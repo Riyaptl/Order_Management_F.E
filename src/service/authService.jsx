@@ -1,0 +1,76 @@
+const API_BASE = 'http://localhost:5000/api/auth';
+
+export const loginUser = async ({ username, password }) => {
+  const res = await fetch(`${API_BASE}/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password }),
+  });
+
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || 'Login failed');
+  }
+
+  return res.json(); // { token, user }
+};
+
+export const sendSignupOtp = async (userData) => {
+  const response = await fetch(`${API_BASE}/sendOTP`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(userData),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || "Failed to send OTP");
+  }
+
+  return response.text(); // returns "OTP sent successfully"
+};
+
+export const verifySignupOtp = async (otpData) => {
+  const response = await fetch(`${API_BASE}/verifyOTP`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(otpData),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || "OTP verification failed");
+  }
+
+  return response.json(); // returns { token }
+};
+
+export const forgotPassService = async (data) => {
+  const response = await fetch(`${API_BASE}/forgotPass`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || "OTP verification failed");
+  }
+
+  return response.json(); 
+};
+
+export const resetPassService = async (data) => {
+  const response = await fetch(`${API_BASE}/resetPass`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || "OTP verification failed");
+  }
+
+  return response.json(); 
+};
