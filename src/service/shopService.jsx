@@ -1,5 +1,5 @@
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-const API_BASE_URL = `${baseURL}/shop`;
+const API_BASE_URL = `${baseURL}/api/shop`;
 
 export const fetchShopsByArea = async (areaId) => {
   const token = localStorage.getItem("token");

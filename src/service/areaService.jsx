@@ -1,5 +1,5 @@
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-const AREA_API = `${baseURL}/area`;
+const AREA_API = `${baseURL}/api/area`;
 
 export const fetchAreasService = async () => {
     

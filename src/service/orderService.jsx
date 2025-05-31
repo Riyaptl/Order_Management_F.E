@@ -1,6 +1,6 @@
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-const API_BASE_URL = `${baseURL}/order`;
+const API_BASE_URL = `${baseURL}/api/order`;
 
 export const placeOrder = async (orderData) => {
   const token = localStorage.getItem("token");
