@@ -1,10 +1,11 @@
-const API_BASE_URL = "http://localhost:5000/api";
+const baseURL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = `${baseURL}/api/user`;
 
 export const fetchSRDetails = async () => {
   const token = localStorage.getItem("token");
   if (!token) throw new Error("Auth token not found");
 
-  const response = await fetch(`${API_BASE_URL}/user/srs`, {
+  const response = await fetch(`${API_BASE_URL}/srs`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

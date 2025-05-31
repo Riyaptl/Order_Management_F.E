@@ -1,4 +1,5 @@
-const API_BASE = 'http://localhost:5000/api/auth';
+const baseURL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE = `${baseURL}/api/auth`;
 
 export const loginUser = async ({ username, password }) => {
   const res = await fetch(`${API_BASE}/login`, {
