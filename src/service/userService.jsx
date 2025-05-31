@@ -1,5 +1,5 @@
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-const API_BASE_URL = `${baseURL}/api/user`;
+const API_BASE_URL = `${baseURL}/user`;
 
 export const fetchSRDetails = async () => {
   const token = localStorage.getItem("token");
