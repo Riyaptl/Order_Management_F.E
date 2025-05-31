@@ -7,6 +7,7 @@ export const fetchShopsByArea = async (areaId) => {
 
   const response = await fetch(`${API_BASE_URL}/route/all`, {
     method: "POST",
+    credentials: 'include',
     headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
@@ -27,7 +28,9 @@ export const fetchShopDetails = async (id) => {
   if (!token) throw new Error("Auth token not found");
 
   const response = await fetch(`${API_BASE_URL}/details/${id}`, {
+    credentials: 'include',
     headers: {
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
@@ -45,6 +48,7 @@ export const deleteShopService = async (ids) => {
 
   const response = await fetch(`${API_BASE_URL}/`, {
     method: "DELETE",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -66,6 +70,7 @@ export const updateShopService = async (id, updates) => {
 
   const response = await fetch(`${API_BASE_URL}/${id}`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -87,6 +92,7 @@ export const createShopService = async (updates) => {
 
   const response = await fetch(`${API_BASE_URL}/`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -108,6 +114,7 @@ export const shiftShopService = async (data) => {
 
   const response = await fetch(`${API_BASE_URL}/shift/area`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -129,6 +136,7 @@ export const exportShopService = async (data) => {
 
   const response = await fetch(`${API_BASE_URL}/csv/export`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,

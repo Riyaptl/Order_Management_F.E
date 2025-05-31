@@ -6,7 +6,9 @@ export const fetchSRDetails = async () => {
   if (!token) throw new Error("Auth token not found");
 
   const response = await fetch(`${API_BASE_URL}/srs`, {
+    credentials: 'include',
     headers: {
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   });

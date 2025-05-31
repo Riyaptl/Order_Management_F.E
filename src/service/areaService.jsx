@@ -8,6 +8,7 @@ export const fetchAreasService = async () => {
 
   const res = await fetch(AREA_API, {
     method: "GET",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`, 
@@ -30,6 +31,7 @@ export const fetchAllAreasService = async (page) => {
 
   const res = await fetch(`${AREA_API}/admin?page=${page}`, {
     method: "GET",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -53,6 +55,7 @@ export const deleteAreaService = async (id) => {
   
   const res = await fetch(`${AREA_API}/${id}`, {
     method: "DELETE",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -75,6 +78,7 @@ export const updateAreaService = async ({id, name, areas}) => {
   
   const res = await fetch(`${AREA_API}/${id}`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -98,6 +102,7 @@ export const createAreaService = async (area) => {
   
   const res = await fetch(`${AREA_API}/`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -121,6 +126,7 @@ export const exportAreaService = async () => {
 
   const response = await fetch(`${AREA_API}/csv/export`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,

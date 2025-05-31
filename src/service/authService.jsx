@@ -4,6 +4,7 @@ const API_BASE = `${baseURL}/auth`;
 export const loginUser = async ({ username, password }) => {
   const res = await fetch(`${API_BASE}/login`, {
     method: 'POST',
+    credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),
   });
@@ -19,6 +20,7 @@ export const loginUser = async ({ username, password }) => {
 export const sendSignupOtp = async (userData) => {
   const response = await fetch(`${API_BASE}/sendOTP`, {
     method: "POST",
+    credentials: 'include',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
   });
@@ -34,6 +36,7 @@ export const sendSignupOtp = async (userData) => {
 export const verifySignupOtp = async (otpData) => {
   const response = await fetch(`${API_BASE}/verifyOTP`, {
     method: "POST",
+    credentials: 'include',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(otpData),
   });
@@ -49,6 +52,7 @@ export const verifySignupOtp = async (otpData) => {
 export const forgotPassService = async (data) => {
   const response = await fetch(`${API_BASE}/forgotPass`, {
     method: "POST",
+    credentials: 'include',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
@@ -64,6 +68,7 @@ export const forgotPassService = async (data) => {
 export const resetPassService = async (data) => {
   const response = await fetch(`${API_BASE}/resetPass`, {
     method: "POST",
+    credentials: 'include',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });

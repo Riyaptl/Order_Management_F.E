@@ -8,6 +8,7 @@ export const placeOrder = async (orderData) => {
 
   const response = await fetch(`${API_BASE_URL}/`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -30,6 +31,7 @@ export const getOrdersService = async (data) => {
 
   const response = await fetch(`${API_BASE_URL}/all/orders`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -51,6 +53,7 @@ export const deleteOrderService = async (id) => {
 
   const response = await fetch(`${API_BASE_URL}/remove/${id}`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -71,6 +74,7 @@ export const exportOrdersCsvService = async (exportParams) => {
 
   const response = await fetch(`${API_BASE_URL}/csv/export`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
