@@ -27,8 +27,6 @@ const CreateRouteComponents = ({ isOpen, onClose, onCreate }) => {
 
   const handleCreate = () => {
     if (!name.trim()) return;
-    if (routes.length === 0) return;
-
     onCreate({ name: name.trim(), routes });
     setName("");
     setRoutes([]);
