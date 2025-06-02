@@ -26,6 +26,8 @@ const CreateRouteComponents = ({ isOpen, onClose, onCreate }) => {
   };
 
   const handleCreate = () => {
+    console.log('got the input', name);
+    
     if (!name.trim()) return;
     onCreate({ name: name.trim(), routes });
     setName("");

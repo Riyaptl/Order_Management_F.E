@@ -82,9 +82,9 @@ const RoutesListPage = () => {
       const res = await dispatch(createArea({ name, areas: routes })).unwrap();
       toast.success(res.message || "Route created successfully");
       setShowCreateModal(false);
-      setTimeout(() => {
-        window.location.reload();
-      }, 500);
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 500);
     } catch (err) {
       toast.error(err || "Could not create route");
     }
